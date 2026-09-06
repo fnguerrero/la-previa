@@ -1,0 +1,99 @@
+/* ---------- encabezado de sección en el menú ---------- */
+.seccion{
+  grid-column:1/-1;
+  margin:22px 2px 2px;
+  font-size:13px;font-weight:700;letter-spacing:.3px;
+  display:flex;align-items:baseline;gap:9px;
+}
+.seccion:first-child{margin-top:6px}
+.seccion span{
+  font-weight:400;font-size:11.5px;color:var(--dim);letter-spacing:0;
+}
+
+/* ---------- colores de los dos jugadores ---------- */
+.j1{--jc:#e0574f}
+.j2{--jc:#f0c05e}
+.pin{
+  display:inline-block;width:10px;height:10px;border-radius:50%;
+  background:var(--jc,var(--acc));vertical-align:-1px;margin-right:5px;
+}
+.turno em{
+  font-style:normal;margin-left:10px;padding-left:10px;
+  border-left:1px solid var(--line);color:var(--txt);font-variant-numeric:tabular-nums;
+}
+
+/* ---------- cuatro en línea ---------- */
+.gc4{
+  display:grid;grid-template-columns:repeat(7,1fr);gap:5px;
+  background:var(--bg2);padding:7px;border-radius:16px;border:1px solid var(--line);
+}
+.gc4 .f{
+  aspect-ratio:1;border-radius:50%;background:#221f30;cursor:pointer;
+  box-shadow:inset 0 2px 5px rgba(0,0,0,.45);
+  transition:background .18s ease, transform .18s ease;
+}
+.gc4 .f.j1{background:#e0574f}
+.gc4 .f.j2{background:#f0c05e}
+.gc4 .f.gana{animation:brillar 1.1s ease-in-out infinite;transform:scale(1.06)}
+@keyframes brillar{
+  0%,100%{box-shadow:0 0 0 0 rgba(255,255,255,.5)}
+  50%{box-shadow:0 0 0 5px rgba(255,255,255,0)}
+}
+
+/* ---------- timbiriche ---------- */
+.gtb{width:100%;max-width:360px;display:block}
+.gtb .pt{fill:var(--dim)}
+.gtb .ln{stroke:#2c2840;stroke-width:1.6;stroke-linecap:round}
+.gtb .ln.puesta{stroke:var(--txt);stroke-width:2.6}
+.gtb .ln.nueva{stroke:var(--acc)}
+.gtb .hit{stroke:transparent;stroke-width:9;cursor:pointer}
+.gtb .cj{opacity:.32}
+.gtb .cj.j1{fill:#e0574f}
+.gtb .cj.j2{fill:#f0c05e}
+
+/* ---------- duelo de reflejos ---------- */
+.duelo{
+  position:relative;border-radius:18px;overflow:hidden;
+  border:1px solid var(--line);background:var(--bg2);
+  height:calc(100dvh - 210px);min-height:320px;
+  display:flex;flex-direction:column;
+}
+.duelo .mitad{
+  flex:1;border:0;background:#221f30;color:var(--txt);
+  font:inherit;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  transition:background .12s ease;
+}
+.duelo .mitad.arriba{transform:rotate(180deg)}
+.duelo .mitad .nom{
+  font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--dim);
+  font-variant-numeric:tabular-nums;
+}
+.duelo.esperando .mitad{background:#43202a}
+.duelo.ya .mitad{background:#1f6b43}
+.duelo.ya .mitad .nom{color:#cfeede}
+.duelo .centro{
+  position:absolute;inset:auto 0 auto 0;top:50%;transform:translateY(-50%);
+  pointer-events:none;text-align:center;padding:10px;
+  display:flex;flex-direction:column;gap:6px;
+}
+.duelo .centro .tanteo{
+  font-size:34px;font-weight:800;font-variant-numeric:tabular-nums;
+  text-shadow:0 2px 12px rgba(0,0,0,.6);
+}
+.duelo .centro .msg{font-size:13.5px;color:#efeaf6;text-shadow:0 1px 8px rgba(0,0,0,.7)}
+.duelo.ya .centro .tanteo,.duelo.ya .centro .msg{color:#fff}
+
+/* ---------- palabra para dos ---------- */
+.armar{text-align:center;padding-top:10px}
+.armar p{margin:0 0 16px;color:var(--dim);font-size:14.5px;line-height:1.5}
+.armar input[type=text]{
+  width:100%;background:var(--bg2);border:1px solid var(--line);border-radius:14px;
+  color:var(--txt);padding:16px;font:600 20px inherit;text-align:center;
+  letter-spacing:3px;text-transform:lowercase;outline:none;
+}
+.armar input[type=text]:focus{border-color:var(--acc)}
+.enlace{
+  background:var(--bg2);border:1px dashed var(--line);border-radius:12px;
+  padding:12px 14px;font-size:12px;color:var(--dim);
+  word-break:break-all;line-height:1.5;margin-bottom:4px;
+}
