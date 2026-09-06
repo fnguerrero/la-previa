@@ -1,0 +1,106 @@
+:root{
+  --bg:#0e0d13;
+  --bg2:#171522;
+  --card:#1e1b2b;
+  --line:#302c42;
+  --txt:#efeaf6;
+  --dim:#9a91b0;
+  --acc:#a97bff;
+  --ok:#4fc27a;
+  --mal:#e0574f;
+  --radio:16px;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+[hidden]{display:none !important}
+html,body{height:100%}
+body{
+  margin:0;
+  background:radial-gradient(130% 70% at 50% -10%, #241f38 0%, var(--bg) 55%);
+  color:var(--txt);
+  font-family:"Segoe UI",system-ui,-apple-system,sans-serif;
+  overscroll-behavior:none;
+}
+.pantalla{min-height:100dvh;max-width:520px;margin:0 auto;padding:18px 16px 34px}
+
+/* ---------- portada ---------- */
+.portada{text-align:center;padding:26px 0 22px}
+.portada h1{margin:0;font-size:40px;font-weight:800;letter-spacing:-1px}
+.portada h1 span{color:var(--acc)}
+.portada p{margin:8px 0 0;color:var(--dim);font-size:14px}
+
+.grilla{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ficha{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radio);
+  padding:16px 14px 14px;
+  text-align:left;
+  color:var(--txt);
+  font:inherit;
+  cursor:pointer;
+  position:relative;
+  overflow:hidden;
+  min-height:118px;
+  display:flex;flex-direction:column;justify-content:flex-end;gap:2px;
+}
+.ficha::before{
+  content:"";position:absolute;inset:0 auto 0 0;width:3px;background:var(--c,var(--acc));
+}
+.ficha .emo{position:absolute;top:12px;right:13px;font-size:26px;opacity:.9}
+.ficha b{font-size:17px;font-weight:700;line-height:1.15}
+.ficha small{color:var(--dim);font-size:12px;line-height:1.35}
+.ficha:active{transform:scale(.985)}
+.ficha .tag{
+  position:absolute;top:12px;left:14px;font-size:9.5px;letter-spacing:1.2px;
+  text-transform:uppercase;color:var(--c,var(--acc));font-weight:700;
+}
+.pie{margin-top:22px;text-align:center;color:#5f586f;font-size:11.5px}
+
+/* ---------- barra del juego ---------- */
+.barra{
+  display:flex;align-items:center;gap:10px;
+  padding-bottom:14px;margin-bottom:6px;border-bottom:1px solid var(--line);
+}
+.barra strong{flex:1;font-size:17px}
+.barra #volver{
+  width:38px;height:38px;flex:none;font-size:26px;line-height:1;
+  border-radius:12px;border:1px solid var(--line);background:var(--bg2);color:var(--txt);
+  cursor:pointer;padding:0 0 3px;
+}
+#acciones{display:flex;gap:7px}
+#acciones button{
+  border:1px solid var(--line);background:var(--bg2);color:var(--txt);
+  border-radius:11px;padding:8px 12px;font:600 13px inherit;cursor:pointer;
+}
+#acciones button.on{background:var(--acc);color:#1a1226;border-color:var(--acc)}
+
+/* ---------- comunes de juegos ---------- */
+#lienzo{padding-top:12px}
+.marcador{
+  display:flex;justify-content:center;gap:22px;margin-bottom:14px;
+  font-size:12px;color:var(--dim);text-transform:uppercase;letter-spacing:1px;text-align:center;
+}
+.marcador b{display:block;font-size:22px;color:var(--txt);letter-spacing:0;margin-bottom:1px}
+.aviso{text-align:center;color:var(--dim);font-size:13.5px;line-height:1.5;margin:14px 0 0}
+.btn{
+  display:block;width:100%;margin-top:14px;padding:15px;border-radius:14px;
+  border:1px solid var(--acc);background:var(--acc);color:#1a1226;
+  font:700 16px inherit;cursor:pointer;
+}
+.btn.fantasma{background:transparent;color:var(--txt);border-color:var(--line)}
+.tablero{margin:0 auto;touch-action:manipulation;user-select:none}
+
+.fin{
+  position:fixed;inset:0;background:rgba(10,9,15,.86);backdrop-filter:blur(3px);
+  display:flex;align-items:center;justify-content:center;padding:22px;z-index:20;
+}
+.fin > div{
+  background:var(--card);border:1px solid var(--line);border-radius:20px;
+  padding:26px 22px;text-align:center;max-width:340px;width:100%;
+}
+.fin h2{margin:0 0 6px;font-size:24px}
+.fin p{margin:0;color:var(--dim);font-size:14px;line-height:1.5}
+
+iframe.externo{
+  width:100%;height:calc(100dvh - 90px);border:0;border-radius:14px;background:var(--bg2);
+}

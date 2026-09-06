@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>La Previa</title>
+<meta name="theme-color" content="#0e0d13">
+<link rel="stylesheet" href="css/estilo.css">
+<link rel="stylesheet" href="css/juegos.css">
+</head>
+<body>
+
+<div id="menu" class="pantalla">
+  <header class="portada">
+    <h1>La <span>Previa</span></h1>
+    <p>Ocho juegos para matar el rato.</p>
+  </header>
+  <div class="grilla" id="grilla"></div>
+  <footer class="pie">Se juega en el navegador. No guarda nada afuera de tu teléfono.</footer>
+</div>
+
+<div id="juego" class="pantalla" hidden>
+  <div class="barra">
+    <button id="volver" aria-label="Volver al menú">‹</button>
+    <strong id="titulo"></strong>
+    <div id="acciones"></div>
+  </div>
+  <div id="lienzo"></div>
+</div>
+
+<script src="js/sudoku.js"></script>
+<script src="js/buscaminas.js"></script>
+<script src="js/dosmil.js"></script>
+<script src="js/match3.js"></script>
+<script src="js/palabra.js"></script>
+<script src="js/picante.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
