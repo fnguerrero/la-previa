@@ -36,6 +36,19 @@
            '<circle cx="4" cy="12" r="1.9"/><circle cx="12" cy="12" r="1.9"/><circle cx="12" cy="20" r="1.9"/>'+
            '<circle cx="20" cy="20" r="1.9"/></g>',
     reflejos:'<path d="M13.6 1.4L4.2 13.2h5.4l-1.2 9.4 9.4-11.8h-5.4z"/>',
+    pacman:'<path d="M12 12L21.6 6.4A11 11 0 1 0 21.6 17.6z"/><circle cx="11.4" cy="7.4" r="1.5" opacity=".35"/>',
+    culebrita:'<g fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">'+
+           '<path d="M3.4 6.6h7.2v5.4h6.2v5.4h-6.6"/></g><circle cx="20.4" cy="17.4" r="2.6"/>'+
+           '<circle cx="3.6" cy="6.6" r="2" opacity=".5"/>',
+    solitario:'<rect x="2.4" y="4.6" width="11" height="15" rx="2" transform="rotate(-9 8 12)" opacity=".45"/>'+
+           '<rect x="10.4" y="4.6" width="11" height="15" rx="2" transform="rotate(7 16 12)"/>',
+    naval:'<path d="M2.6 14.6h18.8l-3 5.8H5.6z"/><path d="M11 3.2h2v9.4h-2z" opacity=".8"/>'+
+           '<path d="M13.4 4.2l5.4 3-5.4 3z" opacity=".55"/><path d="M6.6 9.4h3.6v3.2H6.6z" opacity=".55"/>',
+    yonunca:'<path d="M5.4 3.2h13.2l-1.4 7.2a5.4 5.4 0 0 1-10.4 0z"/>'+
+           '<path d="M11 15.2h2v4.4h-2z" opacity=".7"/><path d="M7.4 19.4h9.2v1.9H7.4z" opacity=".7"/>',
+    tateti:'<g stroke="currentColor" stroke-width="1.7" opacity=".4"><path d="M9 2.4v19.2M15 2.4v19.2M2.4 9h19.2M2.4 15h19.2"/></g>'+
+           '<g stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none">'+
+           '<path d="M4.2 4.2l3.6 3.6M7.8 4.2l-3.6 3.6"/></g><circle cx="18" cy="18" r="2.4" fill="none" stroke="currentColor" stroke-width="2.2"/>',
     duo:'<rect x="1.4" y="4.4" width="9" height="9" rx="1.8"/>'+
            '<rect x="13.6" y="10.6" width="9" height="9" rx="1.8" opacity=".5"/>'+
            '<path d="M12.4 6.6h4.2v3.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity=".8"/>'
@@ -51,11 +64,18 @@
     { id:"palabra",    nom:"Palabra del día", desc:"Cinco letras, seis intentos.",      tag:"diario",  c:"#a97bff", hoy:true },
     { id:"teacordas",  nom:"Te acordás",      desc:"Nostalgia, una por día.",  tag:"diario",  c:"#f0a736", hoy:true,
       externo:{ local:"../TeAcordas/index.html", web:"https://fnguerrero.github.io/teacordas/" } },
+    { id:"pacman",     nom:"Pac-Man",         desc:"El laberinto y los cuatro fantasmas.", tag:"clásico", c:"#f0e05e",
+      externo:{ local:"../Pacman/index.html", web:"https://fnguerrero.github.io/pacman/" } },
+    { id:"culebrita",  nom:"Culebrita",       desc:"La víbora del Nokia.",     tag:"clásico", c:"#5ee0b0" },
+    { id:"solitario",  nom:"Solitario",       desc:"El Klondike de siempre.",  tag:"clásico", c:"#4f9de0" },
     { id:"picante",    nom:"Picante",         desc:"Verdad o atrevimiento.",  tag:"+18",     c:"#ff5f8f", dos:true },
     { id:"cuatro",     nom:"Cuatro en línea", desc:"El primero que alinea cuatro.", tag:"por turnos", c:"#5ec8f0", dos:true },
     { id:"timbiriche", nom:"Timbiriche",      desc:"Cerrá cajas y volvés a jugar.", tag:"por turnos", c:"#5ee0b0", dos:true },
     { id:"reflejos",   nom:"Duelo de reflejos", desc:"El primero que toca en verde.", tag:"a la vez", c:"#f0c05e", dos:true },
-    { id:"duo",        nom:"Palabra para dos", desc:"Le mandás una palabra por chat.", tag:"a distancia", c:"#f08a5e", dos:true }
+    { id:"duo",        nom:"Palabra para dos", desc:"Le mandás una palabra por chat.", tag:"a distancia", c:"#f08a5e", dos:true },
+    { id:"naval",      nom:"Batalla naval",   desc:"Hundile los cinco barcos.", tag:"por turnos", c:"#4f9de0", dos:true },
+    { id:"yonunca",    nom:"Yo nunca nunca",  desc:"Tres niveles, el que lee toma.", tag:"+18", c:"#c77bff", dos:true },
+    { id:"tateti",     nom:"Ta-te-ti",        desc:"Dos minutos y revancha.",  tag:"por turnos", c:"#9a91b0", dos:true }
   ];
 
   var $menu     = document.getElementById("menu");
@@ -82,7 +102,7 @@
   }
 
   [{ titulo:"Solo", bajada:"para el rato muerto", dos:false },
-   { titulo:"De a dos", bajada:"cuatro en el mismo teléfono, uno por chat", dos:true }].forEach(function(sec){
+   { titulo:"De a dos", bajada:"siete en el mismo teléfono, uno por chat", dos:true }].forEach(function(sec){
     var juegos = CATALOGO.filter(function(j){ return !!j.dos === sec.dos; });
     if (!juegos.length) return;
     var h = document.createElement("h2");
