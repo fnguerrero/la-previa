@@ -23,7 +23,7 @@ que se guarda (récords, rachas, tanteos) queda en el teléfono.
 
 | Juego | Cómo se juega |
 |---|---|
-| **Picante** | Verdad o atrevimiento, +18, por turnos |
+| **Picante** | Verdad o reto, +18, por turnos |
 | **Yo nunca nunca** | Tres niveles de intensidad; el que lee, toma |
 | **Cuatro en línea** | Mismo teléfono, con nombres y tanteo que persiste |
 | **Timbiriche** | El que cierra una caja vuelve a jugar |

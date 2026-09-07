@@ -84,7 +84,7 @@ window.JUEGOS.picante = (function(){
     var carta = mazo[tipo].pop();
     ronda++;
     $carta.innerHTML =
-      '<span class="tipo">' + (tipo === "v" ? "Verdad" : "Atrevimiento") + "</span>" +
+      '<span class="tipo">' + (tipo === "v" ? "Verdad" : "Reto") + "</span>" +
       "<p>" + carta + "</p>" +
       '<span class="quien">le toca a ' + jugadores[turno] + "</span>";
     $carta.className = "carta " + (tipo === "v" ? "cv" : "ca");
@@ -116,12 +116,12 @@ window.JUEGOS.picante = (function(){
       el.innerHTML =
         '<p class="turno" id="turnoPic"></p>' +
         '<div class="carta vacia" id="cartaPic">' +
-          "<p>Elegí verdad o atrevimiento.</p>" +
+          "<p>Elegí verdad o reto.</p>" +
           '<span class="quien">se juega de a dos, por turnos</span>' +
         "</div>" +
         '<div class="dosbot">' +
           '<button class="btn" id="bv">Verdad</button>' +
-          '<button class="btn ca" id="ba">Atrevimiento</button>' +
+          '<button class="btn ca" id="ba">Reto</button>' +
         "</div>" +
         '<p class="aviso">Lo que uno no quiera hacer, se pasa y sigue el otro. Esa es la única regla.</p>';
 

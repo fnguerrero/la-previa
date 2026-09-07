@@ -68,7 +68,7 @@
       externo:{ local:"../Pacman/index.html", web:"https://fnguerrero.github.io/pacman/" } },
     { id:"culebrita",  nom:"Culebrita",       desc:"La víbora del Nokia.",     tag:"clásico", c:"#5ee0b0" },
     { id:"solitario",  nom:"Solitario",       desc:"El Klondike de siempre.",  tag:"clásico", c:"#4f9de0" },
-    { id:"picante",    nom:"Picante",         desc:"Verdad o atrevimiento.",  tag:"+18",     c:"#ff5f8f", dos:true },
+    { id:"picante",    nom:"Picante",         desc:"Verdad o reto.",  tag:"+18",     c:"#ff5f8f", dos:true },
     { id:"cuatro",     nom:"Cuatro en línea", desc:"El primero que alinea cuatro.", tag:"por turnos", c:"#5ec8f0", dos:true },
     { id:"timbiriche", nom:"Timbiriche",      desc:"Cerrá cajas y volvés a jugar.", tag:"por turnos", c:"#5ee0b0", dos:true },
     { id:"reflejos",   nom:"Duelo de reflejos", desc:"El primero que toca en verde.", tag:"a la vez", c:"#f0c05e", dos:true },
